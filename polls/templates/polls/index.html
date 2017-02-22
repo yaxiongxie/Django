@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="zh-CN">
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,41 +12,166 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>Signin Template for Bootstrap</title>
-
     <!-- Bootstrap core CSS -->
-      {% load static %}
-    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-    <link href="{% static "polls/sign.css" %}" rel="stylesheet">
+     {% load static %}
+      {% include "polls/importsource.html" %}
+    <style>
+        body{
+            background-color: #eee;
+        }
+        a{
+            cursor:pointer;
+        }
+        .baseDiv{
+            margin-top: 30px;
+            padding-left: 30px;
+            padding-bottom: 50px;
+            background-color: white;
+            border-color: gray;
+            border-width: medium;
+        }
+        .introduceDiv{
+            text-align: center;
+            padding-top: 50px;
+            font-size: 13px;
+        }
+        .searchDiv{
+            font-size: 14px;
+        }
 
-    <script src="{% static "polls/sign.js" %}"></script>
+        .titleDiv{
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+        .contentDiv{
+            font-size: 16px;
+            padding-top: 20px;
+            padding-right: 30px;
+        }
+        .isekboxs>a{
+            display: inline-block;
+            width:46px;
+            height:10px;
+            background: #e9ebf3;
+            margin-right: 4px;
+        }
+        hr{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        .row>img{
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <div class="container">
+    {% include "polls/nav.html" %}
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
+    <div class="jumbotron">
+        <div class="container">
+            <div class = "baseDiv">
+                <div class ="titleDiv">
+                    <h2><b>互为设计</b></h2>
+                </div>
+
+                <div class="contentDiv">
+                    <div class="input-group">
+                      <input type="text" class="form-control input-lg" placeholder="请输入关键字...">
+                      <span class="input-group-btn">
+                        <button class="btn btn-lg" type="button">开始找房</button>
+                      </span>
+                    </div><!-- /input-group -->
+                    <br/><br/><br/>
+                    <div class="row searchDiv">
+                        <div class="col-md-4">
+                            <b>选择区域</b><br/><br/>
+                            <a>全部</a>
+                            <a>西湖</a>
+                            <a>下城</a>
+                            <a>江干</a>
+                            <a>拱墅</a>
+                            <a>上城</a>
+                            <a>滨江</a>
+                            <a>余杭</a>
+                            <a>萧山</a>
+                        </div>
+                        <div class="col-md-4 isekboxs">
+                            <b>选择面积(单位:m)</b><br/><br/>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <br/>
+                            <div class="row">
+                                <span class="col-md-2">0</span>
+                                <span class="col-md-2">100</span>
+                                <span class="col-md-2">300</span>
+                                <span class="col-md-2">500</span>
+                                <span class="col-md-2">1000</span>
+                                <span class="col-md-2">2000</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 isekboxs">
+                            <b>选择价格(单位:元/m/天)</b><br/><br/>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <a></a>
+                            <br/>
+                            <div class="row">
+                                <span class="col-md-2">0</span>
+                                <span class="col-md-2">3</span>
+                                <span class="col-md-2">5</span>
+                                <span class="col-md-2">10</span>
+                                <span class="col-md-2">15</span>
+                                <span class="col-md-2">∞</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <h2>众多优秀企业选择我们</h2><br/>
+            <div class="row">
+                <div class="col-md-3"><img src="{% static "polls/banner1.jpg" %}"/></div>
+                <div class="col-md-3"><img src="{% static "polls/banner1.jpg" %}"/></div>
+                <div class="col-md-3"><img src="{% static "polls/banner1.jpg" %}"/></div>
+                <div class="col-md-3"><img src="{% static "polls/banner1.jpg" %}"/></div>
+            </div>
+            -->
+            <div class="row">
+                <div class="col-md-3 introduceDiv">
+                    <img src="{% static "polls/home-g-01.png" %}"/>
+                    <p><h3>自助选房</h3></p>
+                    <div>实地拍摄 海量真房源</div>
+                </div>
+                <div class="col-md-3 introduceDiv">
+                    <img src="{% static "polls/home-g-02.png" %}"/>
+                    <p><h3>全程免佣</h3></p>
+                    <div>不收佣金 全程免费服务</div>
+                </div>
+                <div class="col-md-3 introduceDiv">
+                    <img src="{% static "polls/home-g-03.png" %}"/>
+                    <p><h3>极速响应</h3></p>
+                    <div>10分钟反馈 24小时提供选址报告</div>
+                </div>
+                <div class="col-md-3 introduceDiv">
+                    <img src="{% static "polls/home-g-04.png" %}"/>
+                    <p><h3>租后服务</h3></p>
+                    <div>注册、装修、行政采买等一站式服务</div>
+                </div>
+            </div>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
 
     </div> <!-- /container -->
 
 
-  </body>
+
+</body>
 </html>

@@ -1,15 +1,22 @@
 from django.contrib import admin
 
-# Register your models here.
-from django.contrib import admin
-
-from .models import Question, Choice
+from .models import OfficeBuilding, Rent,Country,Subway,RoomDirection,RoomType
 
 
-class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('question_text', 'pub_date')
-    list_filter = ['pub_date']
+class OfficeBuildingAdmin(admin.ModelAdmin):
+    list_display = ('title', 'createTime')
+    list_filter = ['createTime']
 
 
-admin.site.register(Question, QuestionAdmin)
-admin.site.register(Choice)
+class RentAdmin(admin.ModelAdmin):
+    list_display = ('title', 'createTime')
+    list_filter = ['createTime']
+
+admin.site.register(Country)
+admin.site.register(Subway)
+admin.site.register(RoomType)
+admin.site.register(RoomDirection)
+admin.site.register(OfficeBuilding, OfficeBuildingAdmin)
+admin.site.register(Rent, RentAdmin)
+
+
