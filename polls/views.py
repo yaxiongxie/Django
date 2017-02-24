@@ -24,7 +24,7 @@ def aboutus(request):
 
 def index(request):
     context = {"nav_flag": 1}
-    return render(request, 'polls/index.html',context)
+    return render(request, 'polls/indexNew.html',context)
 
 
 def services(request):
