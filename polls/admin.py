@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import OfficeBuilding, Rent,Country,Subway,RoomDirection,RoomType
+from .models import OfficeBuilding, Rent,Country,Subway,RoomDirection,RoomType,CmsStatus
 
 
 class OfficeBuildingAdmin(admin.ModelAdmin):
@@ -15,6 +15,7 @@ class RentAdmin(admin.ModelAdmin):
 admin.site.register(Country)
 admin.site.register(Subway)
 admin.site.register(RoomType)
+admin.site.register(CmsStatus)
 admin.site.register(RoomDirection)
 admin.site.register(OfficeBuilding, OfficeBuildingAdmin)
 admin.site.register(Rent, RentAdmin)

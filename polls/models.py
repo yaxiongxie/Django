@@ -35,20 +35,30 @@ class Subway(models.Model):
     def __unicode__(self):
         return u'%s' % self.subway_name
 
+class CmsStatus(models.Model):
+    status_name = models.CharField(max_length=200)
+    sort_int = models.IntegerField()
+
+    def __unicode__(self):
+        return u'%s' % self.status_name
+
 
 class OfficeBuilding(models.Model):
     title = models.CharField(max_length=200)
+    address = models.CharField(max_length=200,default='')
+    subwayDescription=models.CharField(max_length=200,default='')
     rent_price = models.IntegerField()
     sale_price = models.IntegerField()
-    seats = models.IntegerField()
+    seats = models.CharField(max_length=200,default='')
     decoration = models.CharField(max_length=200)
     userTime = models.CharField(max_length=200)
     floorNum = models.IntegerField()
     priceInclude = models.CharField(max_length=200)
+    telephone = models.CharField(max_length=200, default='')
     totalArea = models.IntegerField()
     blockNum = models.IntegerField()
     carNum = models.IntegerField()
-    level = models.IntegerField()
+    level = models.CharField(max_length=200,default='')
     floorHeight = models.IntegerField()
     elevatorNum = models.IntegerField()
     propertyCompany = models.CharField(max_length=200)
@@ -57,6 +67,16 @@ class OfficeBuilding(models.Model):
     subway = models.ForeignKey(Subway, on_delete=models.CASCADE)
     createTime = models.DateTimeField('date published')
     buildTime = models.DateTimeField('date published')
+    sortNum = models.IntegerField(default=0)
+    seeNum = models.IntegerField(default=0)
+    status= models.ForeignKey(CmsStatus, on_delete=models.CASCADE,default=1)
+    location = models.CharField(max_length=200,default='0.0')
+    image1 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image2 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image3 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image4 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image5 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image6 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
 
     def __unicode__(self):
         return u'%s' % self.title
@@ -80,11 +100,11 @@ class RoomDirection(models.Model):
 
 class Rent(models.Model):
     title = models.CharField(max_length=200)
-    address =   models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
     price = models.IntegerField()
     area = models.IntegerField()
-    subway = models.CharField(max_length=200)
-    country = models.CharField(max_length=200)
+    subway_str = models.CharField(max_length=200,default='')
+    country_str = models.CharField(max_length=200,default='')
     telephone = models.CharField(max_length=200)
     rentType = models.CharField(max_length=200)
     payType = models.CharField(max_length=200)
@@ -96,6 +116,16 @@ class Rent(models.Model):
     roomType = models.ForeignKey(RoomType, on_delete=models.CASCADE)
     roomDirection = models.ForeignKey(RoomDirection, on_delete=models.CASCADE)
     createTime = models.DateTimeField('date published')
+    sortNum = models.IntegerField(default=0)
+    seeNum = models.IntegerField(default=0)
+    status = models.ForeignKey(CmsStatus, on_delete=models.CASCADE,default=1)
+    location = models.CharField(max_length=200,default='0.0')
+    image1 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image2 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image3 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image4 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image5 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
+    image6 = models.ImageField(upload_to='pic_folder/', default='pic_folder/None/no-img.jpg')
 
     def __unicode__(self):
         return u'%s' % self.title

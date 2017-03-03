@@ -11,13 +11,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>商业服务</title>
     <!-- Bootstrap core CSS -->
      {% load static %}
       {% include "polls/importsource.html" %}
     <style>
         body{
             background-color: #eee;
+            overflow-y: scroll;
         }
         .jumbotron{
             font-size: 13px;
@@ -28,6 +29,7 @@
         .baseDiv{
             margin-top: 30px;
             padding-left: 30px;
+            padding-right: 30px;
             padding-bottom: 50px;
             background-color: white;
             border-color: gray;
@@ -82,30 +84,35 @@
             <div class="row">
                 <div class="col-md-4">
                     <img src="{% static "polls/img_01.jpg" %}"/>
-                    <p>公司注册</p>
+                    <p>财务系统</p>
                 </div>
                 <div class="col-md-4">
                     <img src="{% static "polls/img_02.jpg" %}"/>
-                    <p>人力社保</p>
+                    <p>人事社保管理系统</p>
                 </div>
                 <div class="col-md-4">
                     <img src="{% static "polls/img_03.jpg" %}"/>
-                    <p>法律服务</p>
+                    <p>装饰设计</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <img src="{% static "polls/img_05.jpg" %}"/>
-                    <p>装修服务</p>
+                    <p>办公用品租售</p>
                 </div>
                 <div class="col-md-4">
                     <img src="{% static "polls/img_06.jpg" %}"/>
-                    <p>财税服务</p>
+                    <p>企业e服务</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static "polls/img_06.jpg" %}"/>
+                    <p>企业推广</p>
                 </div>
             </div>
 
     </div> <!-- /container -->
-
+    </div>
+{% include "polls/footer.html" %}
 
 
 </body>
